@@ -1,4 +1,4 @@
-package C007;
+package C007.HW;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -48,7 +48,7 @@ public class HW {
                 System.out.println("Orange or Yellow is found and selected");
             }
         }
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.close();
     }
 }
