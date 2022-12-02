@@ -7,13 +7,13 @@ import java.util.List;
 public class _005_CarsTestArrayList {
     public static void main(String[] args) {
         // Using ArrayList to store objects
-        List<_003_Cars> cars = new ArrayList<>();
+        List<Cars> cars = new ArrayList<>();
         cars.add(new Toyota("Gasoline"));
         cars.add(new Honda("Gasoline"));
         cars.add(new Tesla("Electric"));
 
         System.out.println("--- Enhanced Loop ---");
-        for (_003_Cars car : cars) {
+        for (Cars car : cars) {
             car.fuelType();
         }
 
@@ -23,7 +23,7 @@ public class _005_CarsTestArrayList {
         }
 
         System.out.println("--- Iterator ---");
-        Iterator<_003_Cars> iterator = cars.iterator();
+        Iterator<Cars> iterator = cars.iterator();
         while (iterator.hasNext()) {
             iterator.next().fuelType();
         }
