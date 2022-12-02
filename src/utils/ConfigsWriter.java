@@ -16,6 +16,7 @@ public class ConfigsWriter {
         // Setup is ready - instead of Reading, this time I will Write to Properties file.
         properties.setProperty("Phone", "310-865-3498");
         properties.setProperty("email","tester@gmail.com");
+        properties.setProperty("address","Canada");
 
         FileOutputStream fos = new FileOutputStream(filePath);
         properties.store(fos,"Adding phone number & email address to the properties file");
