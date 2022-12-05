@@ -33,21 +33,21 @@ public class HW {
             System.out.println(count + ". " + colorAttrValue);
             count++;
         }
-        for (WebElement element : checkBoxColor) {
-            if (element.isSelected() && !element.isSelected()) {
-                System.out.println(element.getAttribute("value"));
-            }
-        }
-        for (WebElement colorsValue : checkBoxColor) {
-            String colorAttrValue = colorsValue.getAttribute("value");
-
-            if (colorAttrValue.contains(color1) ||
-                    colorAttrValue.contains(color2)) {
-
-                colorsValue.click();
-                System.out.println("Orange or Yellow is found and selected");
-            }
-        }
+//        for (WebElement element : checkBoxColor) {
+//            if (element.isSelected() && !element.isSelected()) {
+//                System.out.println(element.getAttribute("value"));
+//            }
+//        }
+//        for (WebElement colorsValue : checkBoxColor) {
+//            String colorAttrValue = colorsValue.getAttribute("value");
+//
+//            if (colorAttrValue.contains(color1) ||
+//                    colorAttrValue.contains(color2)) {
+//
+//                colorsValue.click();
+//                System.out.println("Orange or Yellow is found and selected");
+//            }
+//        }
         Thread.sleep(4000);
         driver.close();
     }
