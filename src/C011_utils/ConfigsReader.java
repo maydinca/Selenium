@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 // IQ: When do you use catch/try and when do you prefer to throw to method signature?
-public class ConfigsReader_new {
+public class ConfigsReader {
     static Properties properties;
 
     /**
