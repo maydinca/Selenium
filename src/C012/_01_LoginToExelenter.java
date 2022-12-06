@@ -33,7 +33,7 @@ public class _01_LoginToExelenter {
 //                driver = new FirefoxDriver();
 //                break;
 
-        switch (browser) {
+        switch (browser.toLowerCase()) {
             case "chrome" -> {
                 System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
                 driver = new ChromeDriver();
