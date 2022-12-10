@@ -1,0 +1,17 @@
+<suite name="My Suite"> //Alt+1
+    <tests name="My Tests"> //Ne testi yapacaksan adini veriyorsun
+        <test name="Test1">
+            <classes>
+                <class name="TestNG.Testler"/>
+                <!--   <class name="Mentoring_6_TestNG.Testler_priority"/> -->
+
+            </classes>
+        </test>
+        <test name="Test2">
+            <classes>
+                <class name="TestNG.Basit_Test"/>
+            </classes>
+        </test>
+
+    </tests>
+</suite>

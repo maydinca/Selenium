@@ -9,21 +9,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseClass {
    public static WebDriver driver;
     public static void setUp(){
-        // 1 ST WAY : Hard -Coding (Not Recommended).
-        System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
-//        WebDriver driver = new ChromeDriver();
+        //  1 ST WAY : Hard -Coding (Not Recommended).
+        //  System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
+        //  WebDriver driver = new ChromeDriver();
 
-        // 2 ST WAY : Soft Code (Recommended).
+        //  2 ST WAY : Soft Code (Recommended).
         ConfigsReader.loadProperties(Constants.CONFIGURATION_FILEPATH); // Replaced hard-coded filePath with Constant
 
         switch (ConfigsReader.getProperties("browser").toLowerCase()){
             case "chrome"->{
                 System.setProperty("webriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
-                WebDriver driver =new ChromeDriver();
+                driver =new ChromeDriver();
             }
             case "firefox"->{
                 System.setProperty("webriver.gecko.driver",Constants.CHROME_DRIVER_PATH);
-                WebDriver driver =new FirefoxDriver();
+                driver =new FirefoxDriver();
             }
             case "edge"->{
                 System.setProperty("webriver.msedge.driver",Constants.CHROME_DRIVER_PATH);
@@ -34,7 +34,12 @@ public class BaseClass {
         driver.get(ConfigsReader.getProperties("url"));
     }
 
-     void quit(){
+        // void quit(){
 
+    public static void tearDown() throws InterruptedException {
+        Thread.sleep(2000);
+        if (driver!=null) { // This line is optional. We only use this line prevent NullPointerException.
+            driver.quit();
+        }
      }
 }
