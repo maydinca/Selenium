@@ -4,8 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import static C011_utils.BaseClass.driver;
-import static C011_utils.BaseClass.setUp;
+import java.util.List;
+
+import static C011_utils.BaseClass.*;
 
 public class DropdownDemo2 {
 
@@ -30,8 +31,23 @@ public class DropdownDemo2 {
         select.selectByVisibleText("Italy");
 
 
+        //Other way to select Visible text (Still use Select class, but not VisibleText() method)
+
+        List<WebElement> countries =select.getOptions();
+        for (int i = 0; i <countries.size() ; i++) {
+            if (countries.get(i).getText().equals("Canada")){
+                countries.get(i).click();
+                break;
+            }
+
+        }
 
 
+
+
+
+
+        tearDown();
 
         }
     }

@@ -29,11 +29,13 @@ public class DropdownDemo {
         WebElement countryDD = driver.findElement(By.xpath("//select[@name='country']"));
         Select select = new Select(countryDD);
 
+        System.out.println("-------------------------------------------------------------------");
+
         //get the size of the dropdown
         List<WebElement> countriesDD = select.getOptions();
         System.out.println("Total number of Countries: " + countriesDD.size());
 
-
+        System.out.println("-------------------------------------------------------------------");
         //Loop through all countries using their index
         for (WebElement country : countries) {
             if (country.getText().equals("Turkey"))
