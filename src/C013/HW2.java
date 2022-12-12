@@ -29,27 +29,31 @@ public class HW2 {
         for (int i = 0; i < colorsValue.size(); i++) {
             String attrValue = colorsValue.get(i).getAttribute("value");
             System.out.println(count + ". " + attrValue.toLowerCase());
+//            if(attrValue.equals("yellow")){
+//                colorsValue.get(i).click();
+//            }
             count++;
 
-
-        }
-        for (WebElement colorsValues : colorsValue) {
-            String attrValue = colorsValues.getAttribute("value");
-            Thread.sleep(2000);
-
-
             System.out.println("----------------");
-            Thread.sleep(2000);
-            System.out.println("attrValue : "+attrValue);
-            Thread.sleep(2000);
-            if (attrValue.equals("yellow")) {
-                colorsValues.click();
-                System.out.println("Yellow & Orange are selected.");
-                break;
+        }
+
+        for (WebElement color : colorsValue) {
+            String attrColor = color.getAttribute("value").toLowerCase();
+            if(attrColor.equals("yellow")){
+                color.click();
             }
+        }
+//        for (WebElement colors : colorsValue) {
+//            //String attrValue = colorsValues.getAttribute("value");
+//
+//            if (colorsValues.equals("yellow")) {
+//                colorsValues.click();
+//            System.out.println("Yellow selected.");
+//            //    break;
+//            }
             Thread.sleep(2000);
             driver.close();
         }
     }
-}
+
 
