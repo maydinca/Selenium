@@ -69,6 +69,7 @@ public class HW1_2ndWay {
         for (int i = 0; i < checkBoxes.size(); i++) {
             String attrValue = checkBoxes.get(i).getAttribute("type");
             System.out.println(count + ". " + attrValue);
+
             if(checkBoxes.get(i).isSelected()) {
                 System.out.println("Checbox" + (i + 1)+ " :"+"is selected");
             }else {
@@ -80,7 +81,7 @@ public class HW1_2ndWay {
                 System.out.println("Checbox" + (i + 1) + " :"+ "is not enabled");
             }
             if(checkBoxes.get(i).isDisplayed()) {
-                System.out.println("Checbox " + (i + 1)+ " :"+ "is displayed");
+                System.out.println("Checbox" + (i + 1)+ " :"+ "is displayed");
             }else {
                 System.out.println("Checbox" + (i + 1)+ " :" + "is not displayed");
             }

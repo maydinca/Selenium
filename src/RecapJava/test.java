@@ -1,4 +1,4 @@
-package Test;
+package RecapJava;
 
 import java.util.Scanner;
 
