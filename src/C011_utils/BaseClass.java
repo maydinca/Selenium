@@ -2,44 +2,45 @@ package C011_utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 // NOTE: THIS CLASS IS USED TO LAUNCH AND QUIT THE BROWSER.
 public class BaseClass {
-   public static WebDriver driver;
-    public static void setUp(){
-        //  1 ST WAY : Hard -Coding (Not Recommended).
-        //  System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
-        //  WebDriver driver = new ChromeDriver();
+    public static WebDriver driver;
+    public static void setUp() {            // NOTE: THIS CLASS IS USED TO LAUNCH AND QUIT THE BROWSER
 
-        //  2 ST WAY : Soft Code (Recommended).
-        ConfigsReader.loadProperties(Constants.CONFIGURATION_FILEPATH); // Replaced hard-coded filePath with Constant
+                                //  1 ST WAY : Hard -Coding (Not Recommended).
+                                //  System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
+                                //  WebDriver driver = new ChromeDriver();
 
-        switch (ConfigsReader.getProperties("browser").toLowerCase()){
-            case "chrome"->{
-                System.setProperty("webriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
-                driver =new ChromeDriver();
+                                //  2 ST WAY : Soft Code (Recommended).
+
+            ConfigsReader.loadProperties(Constants.CONFIGURATION_FILEPATH); // Replaced hard-coded filePath with Constants
+            switch (ConfigsReader.getProperties("browser").toLowerCase()) {
+                case "chrome" -> {
+                    System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
+                    driver = new ChromeDriver();
+                }
+                case "firefox" -> {
+                    System.setProperty("webdriver.gecko.driver", Constants.GECKO_DRIVER_PATH);
+                    driver = new FirefoxDriver();
+                }
+                default -> throw new RuntimeException("Browser is not supported");
             }
-            case "firefox"->{
-                System.setProperty("webriver.gecko.driver",Constants.CHROME_DRIVER_PATH);
-                driver =new FirefoxDriver();
-            }
-            case "edge"->{
-                System.setProperty("webriver.msedge.driver",Constants.CHROME_DRIVER_PATH);
-                WebDriver driver =new EdgeDriver();
-            }
-            default -> throw new RuntimeException("Browser is not supported");
-        }
-        driver.get(ConfigsReader.getProperties("url"));
+
+            driver.get(ConfigsReader.getProperties("url"));
     }
 
         // void quit(){
 
-    public static void tearDown() throws InterruptedException {
-        Thread.sleep(2000);
-        if (driver!=null) { // This line is optional. We only use this line prevent NullPointerException.
+    public static void tearDown() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.getStackTrace();
+        }
+        if (driver != null) {     // This line is optional. We only use it to prevent NullPointerException.
             driver.quit();
         }
-     }
+    }
 }
