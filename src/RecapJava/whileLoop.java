@@ -5,7 +5,6 @@ import java.util.Scanner;
 /**
  * While Loops
  *
- *
  * For your math class you need a program to calculate the factorial of a number.
  * You're given a program which takes a number as input.
  *

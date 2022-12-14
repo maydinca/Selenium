@@ -42,15 +42,30 @@ public class DropdownDemo2 {
 
         }
 
+        // Finding a web element from the Dropdown without Select class (including its methods)
+        List<WebElement> countriesList = driver.findElements(By.xpath("//*[@name='country']/option"));
+        for (WebElement country : countriesList) {
+            if (country.getText().equals("Cuba")) {
+                country.click();
+                break;
+            }
+        }
 
+        // Check if List of Countries is multiple - if we can select multiple elements at a time
+        System.out.println("CountryDD is Multiple: " + select.isMultiple()); // Can I choose/select more than one at once?
 
+        // Identify if 'Months' dropdown is multiple or not
+        WebElement months = driver.findElement(By.cssSelector("select[name='Month']"));
+        Select selectMonths = new Select(months);
 
+        System.out.println("MonthsDD is Multiple: " + selectMonths.isMultiple());
 
 
         tearDown();
-
-        }
     }
+}
+
+
 
 
 
