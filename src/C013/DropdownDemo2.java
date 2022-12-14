@@ -13,8 +13,6 @@ public class DropdownDemo2 {
     public static void main(String[] args) throws InterruptedException {
         setUp();
 
-
-
         WebElement countryDD = driver.findElement(By.xpath("//select[@name='country']"));
         Select select = new Select(countryDD);
 
@@ -59,7 +57,6 @@ public class DropdownDemo2 {
         Select selectMonths = new Select(months);
 
         System.out.println("MonthsDD is Multiple: " + selectMonths.isMultiple());
-
 
         tearDown();
     }
