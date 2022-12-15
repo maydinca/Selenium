@@ -2,9 +2,7 @@ package C013;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
-
 import static C011_utils.BaseClass.driver;
 import static C011_utils.BaseClass.setUp;
 

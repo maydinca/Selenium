@@ -50,6 +50,7 @@ public class DropdownDemo2 {
         }
 
         // Check if List of Countries is multiple - if we can select multiple elements at a time
+        boolean isMultiple= select.isMultiple();
         System.out.println("CountryDD is Multiple: " + select.isMultiple()); // Can I choose/select more than one at once?
 
         // Identify if 'Months' dropdown is multiple or not
