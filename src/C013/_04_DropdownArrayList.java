@@ -46,12 +46,12 @@ public class _04_DropdownArrayList {
 
 
         // Let's verify - print both expectedList AND actualList to the console.
-        System.out.println("-----------------------ACTUAL LIST----------------------------");
+        System.out.println("---------ACTUAL LIST----------------------------");
         for (String actual : actualList) {
             System.out.println(actual);
         }
 
-        System.out.println("----------------------------EXPECTED LIST-------------------------");
+        System.out.println("---------EXPECTED LIST-------------------------");
         for (String expected : expectedList) {
             System.out.println(expected);
         }
