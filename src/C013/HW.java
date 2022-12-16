@@ -52,7 +52,7 @@ public class HW {
             }
             default -> throw new RuntimeException("Browser is not supported");
         }
-        driver.get(ConfigsReader.getProperties("url"));
+        driver.get(ConfigsReader.getProperties("url")); // 1. Go to https://the-internet.herokuapp.com/
 
         //Click the checkbox
         WebElement checkBoxLabel = driver.findElement(By.xpath("//ul/li[6]/a"));

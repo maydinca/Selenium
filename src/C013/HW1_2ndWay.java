@@ -11,6 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
 
+import static C011_utils.BaseClass.tearDown;
+
 /**
  * 1. Go to https://the-internet.herokuapp.com/
  * 2. Find the Checkboxes link, click on it
@@ -51,7 +53,7 @@ public class HW1_2ndWay {
             }
             default -> throw new RuntimeException("Browser is not supported");
         }
-        driver.get(ConfigsReader.getProperties("url"));
+        driver.get(ConfigsReader.getProperties("url")); // https://the-internet.herokuapp.com/
 
         //Click the checkbox
         WebElement checkBoxClick = driver.findElement(By.xpath("//ul/li[6]/a"));
@@ -90,6 +92,7 @@ public class HW1_2ndWay {
 
         Thread.sleep(1000);
         driver.close();
-        }
 
+        tearDown();
+        }
     }

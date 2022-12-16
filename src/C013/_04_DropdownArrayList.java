@@ -9,9 +9,9 @@ import java.util.List;
 
 import static C011_utils.BaseClass.*;
 
-public class DropdownArrayList {
+public class _04_DropdownArrayList {
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp();  //https://selenium08.blogspot.com/2019/07/check-box-and-radio-buttons.html
 
         WebElement months = driver.findElement(By.cssSelector("select[name='Month']"));
         Select select = new Select(months);
@@ -29,9 +29,9 @@ public class DropdownArrayList {
         expectedList.add("December");
 
         if (listOfMonths.containsAll(expectedList))
-            System.out.println("The list does match. Test Passed.");
+            System.out.println("NOTE: The list does match. Test Passed.");
         else
-            System.err.println("The list does NOT match. Test failed.");
+            System.err.println("NOTE: The list does NOT match. Test failed.");
 
         // To fix above problem, first I need to store all months in the form of String data type (from WebElement type) by using.getText()
         List<String> actualList = new ArrayList<>();
@@ -42,16 +42,16 @@ public class DropdownArrayList {
         if (actualList.containsAll(expectedList))
             System.out.println("THE LIST DOES MATCH");
         else
-            System.err.println("THE LIST DOES NOT MATCH");
+            System.err.println("THE LIST DOES NOT MATCH");  // System.err.println gives red output
 
 
         // Let's verify - print both expectedList AND actualList to the console.
-        System.out.println("=== ACTUAL LIST ===");
+        System.out.println("-----------------------ACTUAL LIST----------------------------");
         for (String actual : actualList) {
             System.out.println(actual);
         }
 
-        System.out.println("=== EXPECTED LIST ===");
+        System.out.println("----------------------------EXPECTED LIST-------------------------");
         for (String expected : expectedList) {
             System.out.println(expected);
         }

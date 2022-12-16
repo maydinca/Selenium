@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Iterator;
 import java.util.List;
 
-import static C011_utils.BaseClass.driver;
-import static C011_utils.BaseClass.setUp;
+import static C011_utils.BaseClass.*;
 
 public class _03_Dwopdown_Multiple {
     public static void main(String[] args) throws InterruptedException {
@@ -29,39 +29,41 @@ public class _03_Dwopdown_Multiple {
             System.out.println(i+" - "+month);
         }
 
-//        System.out.println("--------------- Enhanced Loop ---------------------");
+        System.out.println("--------------- Enhanced Loop ---------------------");
+        for (WebElement month : listOfMonths) {
+            System.out.println(month.getText());
+        }
+
+        System.out.println("------------------- Iterator -------------------------");
+        Iterator<WebElement> iterator = listOfMonths.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().getText());
+        }
+
+        // Task 2: Print Only a specific (selected) months from the list. For example, March, May and September.
+        // Hint: we can use loop, or we can use one of existing Select class methods such as byVisibleText(), by index/value.
+
+        // 1st way: without Select
 //        for (WebElement month : listOfMonths) {
-//            System.out.println(month.getText());
+//            if (month.getText().equals("March")
+//                  || month.getText().equals("May")
+//                  || month.getText().equals("September")) {
+//                month.click();
+//                //break;      // if you use 'if' don't use 'break', if you use 'while' then you can use 'break' to exit the code.
+//            }
 //        }
-//
-//        System.out.println("------------------- Iterator -------------------------");
-//        Iterator<WebElement> iterator = listOfMonths.iterator();
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next().getText());
-//        }
-//
-//        // Task 2: Print Only a specific (selected) months from the list. For example, March, May and September.
-//        // Hint: we can use loop, or we can use one of existing Select class methods such as byVisibleText(), by index/value.
-//
-//        // 1st way: without Select
-////        for (WebElement month : listOfMonths) {
-////            if (month.getText().equals("March") || month.getText().equals("May") || month.getText().equals("September")) {
-////                month.click();
-////                //break;      // if you use 'if' don't use 'break', if you use 'while' then you can use 'break' to exit the code.
-////            }
-////        }
-//
-//        // 2nd way:
-//        if (select.isMultiple()) {
-//            select.selectByIndex(3);              // March
-//            select.selectByVisibleText("May");     // May
-//            select.selectByValue("Sept");         // September
-//            Thread.sleep(2000);
-//            select.deselectByIndex(3);            // Deselect month of March
-//            Thread.sleep(2000);
-//            select.deselectAll();
-//        }
-//        tearDown();
+
+        // 2nd way:
+        if (select.isMultiple()) {
+            select.selectByIndex(3);              // March
+            select.selectByVisibleText("May");     // May
+            select.selectByValue("Sept");         // September
+            Thread.sleep(2000);
+            select.deselectByIndex(3);            // Deselect month of March
+            Thread.sleep(2000);
+            select.deselectAll();
+        }
+        tearDown();
     }
 }
 
