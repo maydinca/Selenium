@@ -41,9 +41,22 @@ public class _01_AlertDemo {
         String promptAlertText=promptAlert.getText();           //Get the content /text of the Alert
         System.out.println("promptAlertText = " + promptAlertText);
         Thread.sleep(2000);                               // Add time only when needed. This is totally optional
-        promptAlert.sendKeys("Mehmet Ali");           // I am sending text/value into the input text box
+        promptAlert.sendKeys("Mehmet");           // I am sending text/value into the input text box
         promptAlert.accept();                                   //Press ok button to close the alert
 
+
+        //Lets verify our entered text
+        String enteredText = driver.findElement(By.xpath("//div[contains(text(),'Mehmet')]")).getText();
+        System.out.println("enteredText"+enteredText);
+
+
+        String expectedText ="Mehmet";
+        if(enteredText.contains(expectedText)) {
+            System.out.println("Text is added successfully.Test Passed.");
+
+        } else {
+            System.err.println("Text is not added successfully.Test failed.");
+        }
 
         tearDown();
     }
