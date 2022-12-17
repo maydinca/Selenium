@@ -26,9 +26,23 @@ public class _01_AlertDemo {
 
 
         // Handling Confirmation Alert
+        driver.findElement(By.cssSelector("button#confirm")).click();
+        Alert confirmationAlert= driver.switchTo().alert();
+        String confirmationAlertText = confirmationAlert.getText();
+        System.out.println("confirmationAlertText: " + confirmationAlertText);
+        Thread.sleep(2000);
+        confirmationAlert.dismiss();                                //dismiss = 'Cancel' button
 
 
         // Handling Prompt Alert
+
+        driver.findElement(By.id("prompt")).click();            //identify webElement for the Alert and click on it
+        Alert promptAlert =driver.switchTo().alert();           //Switching to Alert (from the browser) to handle it
+        String promptAlertText=promptAlert.getText();           //Get the content /text of the Alert
+        System.out.println("promptAlertText = " + promptAlertText);
+        Thread.sleep(2000);                               // Add time only when needed. This is totally optional
+        promptAlert.sendKeys("Mehmet Ali");           // I am sending text/value into the input text box
+        promptAlert.accept();                                   //Press ok button to close the alert
 
 
         tearDown();
