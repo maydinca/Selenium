@@ -21,6 +21,7 @@ public class _04_DropdownArrayList {
 
         // This is the list we are given for test case, required by the company/project.
         // Let's assume the customer wants to see these mentioned months in the application.
+
         List<String> expectedList = new ArrayList<>();
         expectedList.add("March");
         expectedList.add("June");
@@ -34,6 +35,7 @@ public class _04_DropdownArrayList {
             System.err.println("NOTE: The list does NOT match. Test failed.");
 
         // To fix above problem, first I need to store all months in the form of String data type (from WebElement type) by using.getText()
+
         List<String> actualList = new ArrayList<>();
         for (WebElement month : listOfMonths) {
             actualList.add(month.getText());           // Here I am converting/storing 'listOfMonths' elements into String type
