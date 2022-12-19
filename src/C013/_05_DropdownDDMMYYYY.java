@@ -9,9 +9,9 @@ import java.util.List;
 
 import static C011_utils.BaseClass.*;
 
-
 // TASK: Go to this website https://vitalets.github.io/combodate/
 //  and select your DOB (example: DD/MM/YYYY, "25/04/1985"), and exit the browser
+
 public class _05_DropdownDDMMYYYY {
     public static void main(String[] args) throws InterruptedException {
         setUp();
@@ -19,12 +19,12 @@ public class _05_DropdownDDMMYYYY {
         // 1. Find element for Day from the dropdown
         WebElement dayDD = driver.findElement(By.xpath("(//select[@class='day '])[1]"));
         Select selectDayDD = new Select(dayDD);
-        selectDayDD.selectByVisibleText("25");
+        selectDayDD.selectByVisibleText("2");
 
         // 2. Find element for the Month from the DD
         WebElement monthDD = driver.findElement(By.xpath("(//select[@class='month '])[1]"));
         Select selectMonthDD = new Select(monthDD);
-        selectMonthDD.selectByIndex(4);  // April
+        selectMonthDD.selectByIndex(1);  // January
 
         // 3. Find element for the Year from the DD
         WebElement yearDD = driver.findElement(By.xpath("(//select[@class='year '])[1]"));
@@ -36,17 +36,16 @@ public class _05_DropdownDDMMYYYY {
 
         Thread.sleep(2000);
 
-        // Loop through the dayDD, find a specific date ("23") select it and print it to the console
+        // Loop through the dayDD, find a specific date ("2") select it and print it to the console
         List<WebElement> dayList = selectDayDD.getOptions();
         for (WebElement day : dayList) {
             day.click();
             String dayText = day.getText();
-            if (dayText.equals("23")) {
+            if (dayText.equals("2")) {
                 System.out.println(dayText);
                 break;
             }
         }
-
 
         tearDown();
 

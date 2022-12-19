@@ -21,9 +21,6 @@ public class _05_DropdownDDMMYYYY_Refactor {
         tearDown();
     }
 
-
-
-
     /**
      *
      * @param day String

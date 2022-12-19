@@ -18,7 +18,6 @@ public class _05_DropdownDDMMYYYY_Refactor2 {
     }
 
 
-
     static void findDate(int month, String day, String year) { // US Date format MM/DD/YYYY, Rest of the world: DD/MM/YYYY
         WebElement monthDD = driver.findElement(By.xpath("(//select[@class='month '])[1]"));
         Select selectMonthDD = new Select(monthDD);
