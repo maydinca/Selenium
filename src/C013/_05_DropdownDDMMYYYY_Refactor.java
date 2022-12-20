@@ -14,10 +14,10 @@ public class _05_DropdownDDMMYYYY_Refactor {
 
     public static void main(String[] args) {
         setUp();
-        findDay("20");
-        findMonth(5);
-        findYear("1995");
-        selectDay("25");
+        findDay("2");
+        findMonth(1);
+        findYear("1985");
+        selectDay("2");
         tearDown();
     }
 
@@ -30,7 +30,7 @@ public class _05_DropdownDDMMYYYY_Refactor {
         WebElement dayDD = driver.findElement(By.xpath("(//select[@class='day '])[1]"));
         Select selectDayDD = new Select(dayDD);
         selectDayDD.selectByVisibleText(day);
-        System.out.println(day);
+        System.out.println("Day : "+day);
         return day;
     }
 
@@ -43,7 +43,7 @@ public class _05_DropdownDDMMYYYY_Refactor {
         WebElement monthDD = driver.findElement(By.xpath("(//select[@class='month '])[1]"));
         Select selectMonthDD = new Select(monthDD);
         selectMonthDD.selectByIndex(month);
-        System.out.println(month);
+        System.out.println("Month : "+month);
         return month;
     }
 
@@ -56,7 +56,7 @@ public class _05_DropdownDDMMYYYY_Refactor {
         WebElement yearDD = driver.findElement(By.xpath("(//select[@class='year '])[1]"));
         Select selectYearDD = new Select(yearDD);
         selectYearDD.selectByValue(year);
-        System.out.println(year);
+        System.out.println("Year : "+year);
         return year;
     }
 
@@ -79,5 +79,4 @@ public class _05_DropdownDDMMYYYY_Refactor {
         }
         return pickDay;
     }
-
 }

@@ -29,6 +29,7 @@ public class BaseClass {
             }
 
             driver.get(ConfigsReader.getProperties("url"));
+
     }
 
         // void quit(){

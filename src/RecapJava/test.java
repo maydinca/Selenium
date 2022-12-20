@@ -7,8 +7,8 @@ public class test {
         Scanner read = new Scanner(System.in);
         int purchases = read.nextInt();
         //complete the code
-        if(purchases > 15000) {
-            if(purchases > 30000) {
+        if(purchases > 15000 && purchases> 30000) {
+//            if(purchases > 30000) {
                 System.out.println("Gift card");
                 System.out.println("Gift card");
             } else {
@@ -16,4 +16,4 @@ public class test {
             }
         }
     }
-}
+//}

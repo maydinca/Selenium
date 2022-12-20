@@ -36,12 +36,12 @@ public class _01_AlertDemo {
 
         // Handling Prompt Alert
 
-        driver.findElement(By.id("prompt")).click();            //identify webElement for the Alert and click on it
-        Alert promptAlert =driver.switchTo().alert();           //Switching to Alert (from the browser) to handle it
-        String promptAlertText=promptAlert.getText();           //Get the content /text of the Alert
+        driver.findElement(By.id("prompt")).click();               //identify webElement for the Alert and click on it
+        Alert promptAlert =driver.switchTo().alert();              //Switching to Alert (from the browser) to handle it
+        String promptAlertText=promptAlert.getText();              //Get the content /text of the Alert
         System.out.println("promptAlertText = " + promptAlertText);
-        Thread.sleep(2000);                               // Add time only when needed. This is totally optional
-        promptAlert.sendKeys("Mehmet");           // I am sending text/value into the input text box
+        Thread.sleep(2000);                                  // Add time only when needed. This is totally optional
+        promptAlert.sendKeys("Mehmet");                  // I am sending text/value into the input text box
         promptAlert.accept();                                   //Press ok button to close the alert
 
 
