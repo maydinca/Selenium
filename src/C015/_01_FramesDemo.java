@@ -39,6 +39,14 @@ public class _01_FramesDemo {
         textBox.clear();
         textBox.sendKeys("QA Engineer");
 
+        Thread.sleep(2000);
+
+        //3.By Frame Web Element
+        WebElement frame = driver.findElement(By.cssSelector("iframe[src='/Demo.html']")); //Here we identify web element and store it in a variable
+        driver.switchTo().frame(frame);                 //Switch to Frame by its element
+
+
+
         tearDown();
 
 

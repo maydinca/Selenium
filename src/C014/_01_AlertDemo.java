@@ -16,7 +16,7 @@ public class _01_AlertDemo {
         Thread.sleep(2000);
 
         // Question: What happens when we try to click on another element without handling an ALERT first?
-//        driver.findElement(By.xpath("//div[text()='Search']")).click();
+        // driver.findElement(By.xpath("//div[text()='Search']")).click();
         // Answer: You will get "UnhandledAlertException" if you don't handle alert before doing anything else.
 
         Alert alert = driver.switchTo().alert();             // We switch the focus of the web browser to the alert window
@@ -31,7 +31,7 @@ public class _01_AlertDemo {
         String confirmationAlertText = confirmationAlert.getText();
         System.out.println("confirmationAlertText: " + confirmationAlertText);
         Thread.sleep(2000);
-        confirmationAlert.dismiss();                                //dismiss = 'Cancel' button
+        confirmationAlert.dismiss();                        //dismiss = 'Cancel' button
 
 
         // Handling Prompt Alert
@@ -42,7 +42,7 @@ public class _01_AlertDemo {
         System.out.println("promptAlertText = " + promptAlertText);
         Thread.sleep(2000);                                  // Add time only when needed. This is totally optional
         promptAlert.sendKeys("Mehmet");                  // I am sending text/value into the input text box
-        promptAlert.accept();                                   //Press ok button to close the alert
+        promptAlert.accept();                                      //Press ok button to close the alert
 
 
         //Lets verify our entered text
