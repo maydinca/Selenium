@@ -11,7 +11,7 @@ import static C011_utils.BaseClass.*;
 public class _02_DropdownDemo2 {
 
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");
 
         WebElement countryDD = driver.findElement(By.xpath("//select[@name='country']"));
         Select select = new Select(countryDD);

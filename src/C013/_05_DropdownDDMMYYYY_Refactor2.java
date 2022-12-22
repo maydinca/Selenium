@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.Select;
 import static C011_utils.BaseClass.*;
 
 
-// TASK: Go to this website https://vitalets.github.io/combodate/
+// TASK: Go to this website
 //  and select your DOB (example: DD/MM/YYYY, "25/04/1985"), and exit the browser
 public class _05_DropdownDDMMYYYY_Refactor2 {
 
     public static void main(String[] args) {
-        setUp();
+        setUp("https://vitalets.github.io/combodate/");
         findDate(4,"25", "1988");   // <--- THIS IS CALLED CLEAN CODING. All distractions are hidden elsewhere.
         tearDown();
     }

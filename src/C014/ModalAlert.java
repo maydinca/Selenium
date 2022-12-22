@@ -7,7 +7,7 @@ import static C011_utils.BaseClass.*;
 
 public class ModalAlert {
     public static void main(String[] args) {
-    setUp();  //https://demoqa.com/modal-dialogs
+        setUp("https://demoqa.com/modal-dialogs");  //
 
         WebElement modalAlert = driver.findElement(By.cssSelector("#showSmallModal")); // find web element for modal alert type (HTML based alert ) and store it
         modalAlert.click();                         //click to trigger (lunch) it
@@ -21,5 +21,5 @@ public class ModalAlert {
 
         driver.findElement(By.xpath("//button[text()='Close']")).click(); // I am closing the modal by clicking the close button
         tearDown();
-}
+    }
 }

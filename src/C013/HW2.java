@@ -17,7 +17,7 @@ import static C011_utils.BaseClass.setUp;
  */
 public class HW2 {
     public static void main(String[] args) throws InterruptedException {
-        setUp();  //https://selenium08.blogspot.com/2019/07/check-box-and-radio-buttons.html
+        setUp("https://selenium08.blogspot.com/2019/07/check-box-and-radio-buttons.html");  //
 
         List<WebElement> colorsValue = driver.findElements(By.xpath("//*/input[@name='color']"));
 

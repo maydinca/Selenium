@@ -7,7 +7,7 @@ import static C011_utils.BaseClass.setUp;
 import static C011_utils.BaseClass.tearDown;
 /*
 // *  HW: Checkboxes & Radio Buttons
-// *   1. Go to https://the-internet.herokuapp.com/
+// *   1. Go to
 // *   2. Find the Checkboxes link, click on it
 // *   3. Once you are on the Checkboxes homepage you will see two Checkboxes:
 // *       - checkbox 1
@@ -24,7 +24,7 @@ import static C011_utils.BaseClass.tearDown;
  * */
 public class HW_S {
     public static void main(String[] args) throws InterruptedException {
-        setUp();  //
+        setUp("https://the-internet.herokuapp.com/");  //
 
         driver.findElement(By.linkText("Checkboxes")).click();
 

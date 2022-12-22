@@ -7,7 +7,7 @@ import static C011_utils.BaseClass.*;
 
 public class _01_FramesDemo {
     public static void main(String[] args) throws InterruptedException {
-        setUp(); //http://www.uitestpractice.com/Students/Switchto
+        setUp("http://www.uitestpractice.com/Students/Switchto"); //
 
         //Trying to send Text 'SDET' to the Frame 's input text-box
         //Note: Before interacting with a frame , first we need to switch to it, then take action. Otherwise, we get Exception.
@@ -24,7 +24,7 @@ public class _01_FramesDemo {
          */
 
         // 1., By Index
-        driver.switchTo ().frame(0);
+        driver.switchTo ().frame(0);   //switch the frame by Index
         WebElement textBox= driver.findElement(By.id("name"));
         textBox.sendKeys("SDET");
 

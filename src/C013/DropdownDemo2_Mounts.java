@@ -12,7 +12,7 @@ import static C011_utils.BaseClass.*;
 public class DropdownDemo2_Mounts {
 
     public static void main(String[] args) throws InterruptedException {
-        setUp();         // Use this URL https://selenium08.blogspot.com/2019/11/dropdown.html for this test
+        setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");         // Use this URL  for this test
 
         WebElement months = driver.findElement(By.cssSelector("div>select[name='Month']"));
         Select select = new Select(months);

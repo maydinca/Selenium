@@ -9,12 +9,12 @@ import java.util.List;
 
 import static C011_utils.BaseClass.*;
 
-// TASK: Go to this website https://vitalets.github.io/combodate/
+// TASK: Go to this website
 //  and select your DOB (example: DD/MM/YYYY, "25/04/1985"), and exit the browser
 
 public class _05_DropdownDDMMYYYY {
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp("https://vitalets.github.io/combodate/");
 
         // 1. Find element for Day from the dropdown
         WebElement dayDD = driver.findElement(By.xpath("(//select[@class='day '])[1]"));

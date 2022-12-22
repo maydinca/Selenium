@@ -8,12 +8,12 @@ import java.util.List;
 import static C011_utils.BaseClass.*;
 
 
-// TASK: Go to this website https://vitalets.github.io/combodate/
+// TASK: Go to this website
 //  and select your DOB (example: DD/MM/YYYY, "25/04/1985"), and exit the browser
 public class _05_DropdownDDMMYYYY_Refactor {
 
     public static void main(String[] args) {
-        setUp();
+        setUp("https://vitalets.github.io/combodate/");
         findDay("2");
         findMonth(1);
         findYear("1985");
