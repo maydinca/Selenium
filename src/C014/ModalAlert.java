@@ -6,20 +6,21 @@ import org.openqa.selenium.WebElement;
 import static C011_utils.BaseClass.*;
 
 public class ModalAlert {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         setUp("https://demoqa.com/modal-dialogs");  //
+        WebElement modalAlert = driver.findElement(By.id("showSmallModal"));   // Find web element for modal alert type (HTML based alert) and store it
+        modalAlert.click();                                                          // click to trigger (launch) it.
+        System.out.println(modalAlert.getText());                                    // Retrieving the text of Modal dialog (WebElement itself)
 
-        WebElement modalAlert = driver.findElement(By.cssSelector("#showSmallModal")); // find web element for modal alert type (HTML based alert ) and store it
-        modalAlert.click();                         //click to trigger (lunch) it
-        System.out.println(modalAlert.getText());   //Retrieving the text of Modal dialog (WebElement itself)
+        // Print in two lines (Title of Modal)
+        String modalTitleText = driver.findElement(By.xpath("//div[@class='modal-title h4']")).getText();
+        System.out.println("modalTitleText: " + modalTitleText);
 
+        // Print in one line (Body content of Modal)
+        System.out.println("modalBodyText: " + driver.findElement(By.xpath("//div[@class='modal-body']")).getText());
 
-        //Print in two lines (Title of Modal)
-
-        WebElement modalBody = driver.findElement(By.xpath("//*[@class='modal-body']"));
-        System.out.println(modalBody.getText());
-
-        driver.findElement(By.xpath("//button[text()='Close']")).click(); // I am closing the modal by clicking the close button
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[text()='Close']")).click();         // I am closing the modal by clicking 'Close' button
         tearDown();
     }
 }
