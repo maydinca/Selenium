@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import static C011_utils.BaseClass.*;
 
-public class ModalAlert {
+public class _02_ModalAlert {
     public static void main(String[] args) throws InterruptedException {
         setUp("https://demoqa.com/modal-dialogs");  //
         WebElement modalAlert = driver.findElement(By.id("showSmallModal"));   // Find web element for modal alert type (HTML based alert) and store it
