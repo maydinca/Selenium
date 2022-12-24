@@ -46,6 +46,7 @@ public class _01_FramesDemo {
 
             // 3. By Frame Web Element
             WebElement frame = driver.findElement(By.cssSelector("iframe[src='/Demo.html']")); // Here we identify web element and store it in a variable
+//            driver.switchTo().frame("driver.findElement(By.cssSelector(\"iframe[src='/Demo.html']\"))"); we can use this without identify webElement
             driver.switchTo().frame(frame);                               // Switch to Frame by its element
             textBox.clear();
             textBox.sendKeys("Frame by WebElement");
