@@ -23,9 +23,9 @@ public class _03_Task {
         System.out.println("linkText: " + link.getText());
 
 
-        Thread.sleep(2000);
+        Thread.sleep(500);
         link.click();
-        Thread.sleep(2000);
+        Thread.sleep(500);
 
         tearDown();
     }

@@ -40,5 +40,6 @@ public class _02_FrameDemo2 {
 
 
         tearDown();
+        tearDown();
     }
 }
