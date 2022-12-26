@@ -22,7 +22,6 @@ public class _02_WindowHandle {
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://amazon.com");
 
-
         Set<String> allWindows = driver.getWindowHandles();                          // This will store all TABS in a Set of Strings
         System.out.println("How many tabs open right now: " + allWindows.size());    // We are printing total TABS open right now
 
@@ -38,7 +37,6 @@ public class _02_WindowHandle {
             System.out.println("Page " + count + " title: " + title);     // This method cares about the FOCUS, thus we need to switch first to current window THEN retrieve the title
             count++;
 
-
             // What if we want to switch focus to a specific tab/window?
 
             if (title.contains("Store")) {
@@ -49,9 +47,6 @@ public class _02_WindowHandle {
             }
 
         }
-
-
-
 
         tearDown();
     }

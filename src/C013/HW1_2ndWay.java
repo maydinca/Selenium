@@ -53,7 +53,8 @@ public class HW1_2ndWay {
             }
             default -> throw new RuntimeException("Browser is not supported");
         }
-        driver.get(ConfigsReader.getProperties("url")); // https://the-internet.herokuapp.com/
+//        driver.get(ConfigsReader.getProperties("url")); // https://the-internet.herokuapp.com/
+        driver.get("https://the-internet.herokuapp.com/");
 
         //Click the checkbox
         WebElement checkBoxClick = driver.findElement(By.xpath("//ul/li[6]/a"));

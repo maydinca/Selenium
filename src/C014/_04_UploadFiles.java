@@ -20,7 +20,7 @@ public class _04_UploadFiles {
          */
 
         // Step 1. Find the file path in your local machine, and store it in a String
-        String filePath = "/Users/shahnoza/Desktop/fileUploadDemo.jpg";
+        String filePath = "C:/Users/Owner/Downloads/HTTP-Error-Codes.jpg";
 
         // Step 2. Locate web element for the 'Choose file' button (Button which triggers Window Popup for file upload)
         driver.findElement(By.id("file-upload")).sendKeys(filePath);
