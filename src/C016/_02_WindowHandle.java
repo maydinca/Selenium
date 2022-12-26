@@ -41,7 +41,7 @@ public class _02_WindowHandle {
 
             if (title.contains("Store")) {
                 driver.switchTo().window(nextWindow);
-                System.err.println("Window is found and switched to: " + driver.getTitle());
+                System.err.println("Window is found and switched to: " + driver.getTitle()); // err ----> getting red color output
                 System.err.println("Window ID: " + nextWindow);
                 //break;
             }
