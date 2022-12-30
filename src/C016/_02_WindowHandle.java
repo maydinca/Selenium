@@ -24,6 +24,15 @@ public class _02_WindowHandle {
 
         Set<String> allWindows = driver.getWindowHandles();                          // This will store all TABS in a Set of Strings
         System.out.println("How many tabs open right now: " + allWindows.size());    // We are printing total TABS open right now
+        System.out.println("************************************************************");
+//        int count=1;
+//
+//        for (String window : allWindows) {
+//            driver.switchTo().window(window);
+//            String title = driver.getTitle();
+//            System.out.println("Page " + count + " title: " + title);
+//            count++;
+//        }
 
         System.out.println("==============================");
         // Let's iterate through all windows/tabs

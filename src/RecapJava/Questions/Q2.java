@@ -1,6 +1,6 @@
-package RecapJava;
+package RecapJava.Questions;
 import java.util.Scanner;
-public class deneme {
+public class Q2 {
 
     /**
      * Summing Elements in Arrays

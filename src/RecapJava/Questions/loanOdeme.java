@@ -1,4 +1,4 @@
-package RecapJava;
+package RecapJava.Questions;
 import java.util.Scanner;
 public class loanOdeme {
 /*

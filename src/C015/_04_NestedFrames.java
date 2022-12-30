@@ -22,7 +22,7 @@ public class _04_NestedFrames {
         driver.switchTo().frame(driver.findElement(By.cssSelector("frame[src='frame_4.html']")));   // we switch back to Frame 4
         driver.findElement(By.name("mytext4")).sendKeys("Frame Four");
 
-
+        // driver.switchTo().parentFrame(); bir onceki parent frame gidebilmek icin
         tearDown();
     }
 }
