@@ -11,37 +11,33 @@ public class _03_WindowHandle {
     public static void main(String[] args) throws InterruptedException {
         setUp("https://demoqa.com/browser-windows");
 
-
         String parentWindowTitle = driver.getTitle();
-        System.out.println("parentWindowTitle :"+parentWindowTitle);
-        String parentWindow= driver.getWindowHandle();
-        System.out.println("parentWindow ID: = " + parentWindowTitle);
+        System.out.println("parentWindowTitle: " + parentWindowTitle);
+        String parentWindow = driver.getWindowHandle();
+        System.out.println("parentWindow ID: " + parentWindow);
 
-
-        for (int i = 0; i < 3; i++) {
-            driver.findElement(By.id("tabButton")).click();
+        for (int i = 0; i < 3; i++) {                                  // Specifying number of clicks
+            //driver.findElement(By.id("tabButton")).click();          // Open in a new Tab
+            driver.findElement(By.id("windowButton")).click();  // Open in a new Window (browser)
             Thread.sleep(1000);
         }
 
-        Set<String> allwindows=driver.getWindowHandles();
+        Set<String> allWindows = driver.getWindowHandles();
 
-        for(String windowOrTab :allwindows){
+        for (String windowOrTab : allWindows) {
             driver.switchTo().window(windowOrTab);
-
             driver.get("https://google.com");
-            System.out.println("Window ID :"+windowOrTab +"Title :"+ driver.getTitle());
-           Thread.sleep(1000);
-
+            System.out.println("Window ID: " + windowOrTab + " Title: " + driver.getTitle());
+            Thread.sleep(1000);
         }
 
-        //with iterator
-        System.out.println("***************");
-
-        Iterator<String>iterator=allwindows.iterator();
-        while(iterator.hasNext()){
-            String windowOrTab=iterator.next();
+        // With iterator
+        System.out.println("===================");
+        Iterator<String> iterator = allWindows.iterator();
+        while (iterator.hasNext()) {
+            String windowOrTab = iterator.next();
             driver.switchTo().window(windowOrTab);
-            System.out.println("window ID = " + windowOrTab+"URL ="+driver.getCurrentUrl());
+            System.out.println("Window ID: " + windowOrTab + " URL: " +  driver.getCurrentUrl());
         }
 
 
