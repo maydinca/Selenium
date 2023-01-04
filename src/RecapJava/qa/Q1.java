@@ -1,8 +1,5 @@
 package RecapJava.qa;
 
-import java.util.Random;
-import java.util.Scanner;
-
 /*
  // Task
     // create a random int number between 2 and 5 included
@@ -15,23 +12,8 @@ import java.util.Scanner;
  */
 public class Q1 {
 
-    public static void main(String[] args) {
-
-        Scanner scn=new Scanner(System.in);
-        System.out.println("Lutfen 1 ile 5 arasi bir sayi girin!");
-        Random
-        int userNumber= scn.nextInt();
-        Boolean valid=new Boolean();
-
-
-        if (userNumber>0 && userNumber<=5);
-
-
-
-
 
 
 
     }
 
-}
