@@ -14,9 +14,9 @@ import static C011_utils.BaseClass.tearDown;
 public class _04_Task {
 
           public static void main(String[] args) {
-            setUp("https://the-internet.herokuapp.com/windows");
+              setUp("https://the-internet.herokuapp.com/windows");
 
-            tearDown();
-        }
+              tearDown();
+          }
     }
 
