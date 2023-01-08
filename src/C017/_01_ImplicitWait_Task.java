@@ -1,7 +1,7 @@
 package C017;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.NoSuchElementException;
 
 import java.time.Duration;
 
@@ -18,21 +18,17 @@ import static C011_utils.BaseClass.*;
 public class _01_ImplicitWait_Task {
     public static void main(String[] args) {
         setUp("http://uitestpractice.com/Students/Contact");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));       // This is a GLOBAL wait. Applies to entire elements in the class.
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        driver.manage().window().maximize();
-
-//        try {
-
-            WebElement linkText = driver.findElement(By.linkText("This is a Ajax link"));
-            linkText.click();
-            System.out.println(driver.findElement(By.xpath("//div[@class='ContactUs']/p")).getText());
-//        }catch (NoSuchElementException e){
-//            e.printStackTrace();
-//            System.out.println("Element is not found, Please wait longer for element to become visible");
-//        }
-
+        try {
+            driver.findElement(By.linkText("This is a Ajax link")).click();
+            System.out.println(driver.findElement(By.className("ContactUs")).getText());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            System.out.println("Element is not found. Wait longer for the element to become visible on the UI ");
+        }
 
         tearDown();
+
     }
 }
