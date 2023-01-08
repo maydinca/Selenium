@@ -15,7 +15,7 @@ import static C011_utils.BaseClass.*;
  *    4. Wait for its content to load and retrieve the text from it and print it to the console.
  *
  */
-public class _01_ImplicitWait_Task {
+public class _02_ImplicitWait_Task {
     public static void main(String[] args) {
         setUp("http://uitestpractice.com/Students/Contact");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));       // This is a GLOBAL wait. Applies to entire elements in the class.
@@ -27,8 +27,6 @@ public class _01_ImplicitWait_Task {
             e.printStackTrace();
             System.out.println("Element is not found. Wait longer for the element to become visible on the UI ");
         }
-
         tearDown();
-
     }
 }
