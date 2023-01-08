@@ -7,7 +7,7 @@ import java.util.Set;
 
 import static C011_utils.BaseClass.*;
 
-public class _03_WindowHandle {
+public class WindowHandle2 {
     public static void main(String[] args) throws InterruptedException {
         setUp("https://demoqa.com/browser-windows");
 
