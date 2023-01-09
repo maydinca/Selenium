@@ -22,7 +22,7 @@ import static C011_utils.BaseClass.*;
 public class _04_ExplicitWait_HW {
     public static void main(String[] args) {
         setUp("https://the-internet.herokuapp.com/dynamic_loading/2");
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY, "true");          // This line of code will get rid of extra error logs from the console.
+        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY, "true");  // This line of code will get rid of extra error logs from the console.
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40)); // Implicit wait, dynamic wait.
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -31,6 +31,7 @@ public class _04_ExplicitWait_HW {
             driver.findElement(By.cssSelector("div[id='start'] button")).click(); // div#start button
             //Thread.sleep(10);  // static wait, even element is fond in 3 sec, we will be wasting another 7 sec.
             wait.until(ExpectedConditions.textToBe(By.cssSelector("div#finish h4"), "Hello World!"));
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#finish h4")));
             System.out.println(driver.findElement(By.cssSelector("div#finish h4")).getText());
         } catch (
                 NoSuchElementException e) { // Note: if you get this type of exception, just replace with this: TimeOutException

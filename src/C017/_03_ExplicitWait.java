@@ -13,7 +13,6 @@ import static C011_utils.BaseClass.*;
 public class _03_ExplicitWait {
     public static void main(String[] args) {
 
-
         setUp("http://uitestpractice.com/Students/Contact");
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));                         // This is a GLOBAL wait. Applies to entire elements in the class.
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));      // Explicit wait is not Global, waits for a specific condition of the element.
@@ -27,12 +26,9 @@ public class _03_ExplicitWait {
             e.printStackTrace();
             System.out.println("Element is not found. Wait longer for the element to become visible on the UI ");
         }
-
         WebElement element = driver.findElement(By.className("ContactUs"));  // This is web element
-        By by = By.className("ContactUs");                                       // This is locator.
-
+        By by = By.className("ContactUs");                                   // This is locator.
 
         tearDown();
-
     }
 }
