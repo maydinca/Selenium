@@ -27,16 +27,12 @@ public class _01_LoginTest {
 
         WebElement loginBtn = driver.findElement( By.id("btnLogin"));
         CommonMethods.click(loginBtn);
-        //
+        //CommonMethods.click(loginBtn);
         clickButWaitForClickability(loginBtn);
-
-
 
 
         tearDown();
     }
-
-
 /**
  *  To access method of one class from another class/package.
  *      1. import statically
