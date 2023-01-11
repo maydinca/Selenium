@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static C011_utils.BaseClass.*;
+import static C011_utils.CommonMethods.clickRadioORCheckbox;
 
 public class _02_RadioOrCheckBoxTest {
     public static void main(String[] args) {
@@ -32,15 +33,4 @@ public class _02_RadioOrCheckBoxTest {
 
     }
 
-
-    public static void clickRadioORCheckbox(List<WebElement>radioOrCheckbox,String expectedValue){
-
-        for (WebElement element :radioOrCheckbox) {
-            String actualValue = element.getAttribute("value");
-            if (actualValue.equals(expectedValue)){
-                element.click();
-                break;
-            }
-        }
-    }
 }

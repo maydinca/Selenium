@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.Set;
 
 import static C011_utils.BaseClass.driver;
@@ -65,5 +66,15 @@ public class CommonMethods {
     public static void clickButWaitForVisibility (WebElement element){
         waitForVisibility(element);
         element.click();
+    }
+    public static void clickRadioORCheckbox(List<WebElement> radioOrCheckbox, String expectedValue){
+
+        for (WebElement element :radioOrCheckbox) {
+            String actualValue = element.getAttribute("value");
+            if (actualValue.equals(expectedValue)){
+                element.click();
+                break;
+            }
+        }
     }
 }
