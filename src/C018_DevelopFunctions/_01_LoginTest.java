@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import static C011_utils.BaseClass.*;
+import static C011_utils.CommonMethods.clickButWaitForClickability;
+import static C011_utils.CommonMethods.sendText;
 
 public class _01_LoginTest {
     public static void main(String[] args) {
@@ -18,7 +20,18 @@ public class _01_LoginTest {
         // Second way, with function
         WebElement username = driver.findElement(By.id("txtUsername"));
 //        sendText(username, "Admin");
-        CommonMethods.sendText(username, ConfigsReader.getProperties("username"));
+        sendText(username, ConfigsReader.getProperties("username"));
+
+        WebElement password = driver.findElement(By.id("txtPassword"));
+        sendText(password,ConfigsReader.getProperties("password"));
+
+        WebElement loginBtn = driver.findElement( By.id("btnLogin"));
+        CommonMethods.click(loginBtn);
+        //
+        clickButWaitForClickability(loginBtn);
+
+
+
 
         tearDown();
     }
